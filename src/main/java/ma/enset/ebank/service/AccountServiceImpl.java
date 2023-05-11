@@ -39,4 +39,17 @@ public class AccountServiceImpl implements AccountService {
         BankAccountResponseDTO bankAccountResponseDTO = accountMapper.fromBankAccount(save);
         return bankAccountResponseDTO;
     }
+
+    public BankAccountResponseDTO updateAccount(String id, BankAccountRequestDTO bankAccountRequestDTO){
+        BankAccount account = bankAccountReposetory.findById(id).orElseThrow();
+        if(bankAccountRequestDTO.getBalance() != null)
+            account.setBalance(bankAccountRequestDTO.getBalance());
+        if(bankAccountRequestDTO.getType() != null)
+            account.setType(bankAccountRequestDTO.getType());
+        if(bankAccountRequestDTO.getCurrency() != null)
+            account.setCurrency(bankAccountRequestDTO.getCurrency());
+        BankAccount save = bankAccountReposetory.save(account);
+        BankAccountResponseDTO bankAccountResponseDTO = accountMapper.fromBankAccount(save);
+        return bankAccountResponseDTO;
+    }
 }

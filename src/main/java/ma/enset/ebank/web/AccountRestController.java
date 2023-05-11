@@ -44,17 +44,17 @@ public class AccountRestController {
     }
 
     @PutMapping("/bankAccounts/{id}")
-    public BankAccount update (@PathVariable String id, @RequestBody BankAccount bankAccount){
-        BankAccount account = bankAccountReposetory.findById(id).orElseThrow();
-        if(bankAccount.getBalance() != null)
-            account.setBalance(bankAccount.getBalance());
-        if(bankAccount.getType() != null)
-            account.setType(bankAccount.getType());
-        if(bankAccount.getCurrency() != null)
-            account.setCurrency(bankAccount.getCurrency());
-        if(bankAccount.getCreatedAt() != null)
-            account.setCreatedAt(new Date());
-        return bankAccountReposetory.save(account);
+    public BankAccountResponseDTO update (@PathVariable String id, @RequestBody BankAccountRequestDTO bankAccount){
+//        BankAccount account = bankAccountReposetory.findById(id).orElseThrow();
+//        if(bankAccount.getBalance() != null)
+//            account.setBalance(bankAccount.getBalance());
+//        if(bankAccount.getType() != null)
+//            account.setType(bankAccount.getType());
+//        if(bankAccount.getCurrency() != null)
+//            account.setCurrency(bankAccount.getCurrency());
+//        if(bankAccount.getCreatedAt() != null)
+//            account.setCreatedAt(new Date());
+        return accountService.updateAccount(id, bankAccount);
     }
 
     @DeleteMapping("/bankAccounts/{id}")

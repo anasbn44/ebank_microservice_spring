@@ -7,4 +7,5 @@ import ma.enset.ebank.enums.AccountType;
 
 public interface AccountService {
     public BankAccountResponseDTO addAccount(BankAccountRequestDTO bankAccountRequestDTO);
+    public BankAccountResponseDTO updateAccount(String id, BankAccountRequestDTO bankAccountRequestDTO);
 }
