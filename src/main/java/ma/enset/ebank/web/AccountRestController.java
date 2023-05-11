@@ -4,21 +4,20 @@ import ma.enset.ebank.dto.BankAccountRequestDTO;
 import ma.enset.ebank.dto.BankAccountResponseDTO;
 import ma.enset.ebank.entities.BankAccount;
 import ma.enset.ebank.mappers.AccountMapper;
-import ma.enset.ebank.reposetories.BankAccountReposetory;
+import ma.enset.ebank.reposetories.BankAccountRepository;
 import ma.enset.ebank.service.AccountService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 public class AccountRestController {
-    private BankAccountReposetory bankAccountReposetory;
+    private BankAccountRepository bankAccountReposetory;
     private AccountService accountService;
     private AccountMapper accountMapper;
 
-    public AccountRestController(BankAccountReposetory bankAccountReposetory, AccountService accountService, AccountMapper accountMapper){
+    public AccountRestController(BankAccountRepository bankAccountReposetory, AccountService accountService, AccountMapper accountMapper){
         this.bankAccountReposetory = bankAccountReposetory;
         this.accountService = accountService;
         this.accountMapper = accountMapper;

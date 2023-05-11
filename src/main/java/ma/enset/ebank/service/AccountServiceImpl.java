@@ -4,7 +4,7 @@ import ma.enset.ebank.dto.BankAccountRequestDTO;
 import ma.enset.ebank.dto.BankAccountResponseDTO;
 import ma.enset.ebank.entities.BankAccount;
 import ma.enset.ebank.mappers.AccountMapper;
-import ma.enset.ebank.reposetories.BankAccountReposetory;
+import ma.enset.ebank.reposetories.BankAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Transactional
 public class AccountServiceImpl implements AccountService {
     @Autowired
-    private BankAccountReposetory bankAccountReposetory;
+    private BankAccountRepository bankAccountReposetory;
     @Autowired
     private AccountMapper accountMapper;
     @Override

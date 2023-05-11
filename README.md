@@ -36,5 +36,4 @@ Avec le logiciel Postman nous permettant de tester les differentes fonctions du 
 * Liste des clients avec la projection "p1" du lien http://localhost:1997/bankAccounts?projection=p1
 <img src="captures/4_4.png">
 
-### 5. Création de la couche Service (métier) et du micro service en utilisant les DTOs et Mappers
-### 6. Création un Web service GraphQL
+### 5. Création un Web service GraphQL
