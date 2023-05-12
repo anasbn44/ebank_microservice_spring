@@ -29,13 +29,6 @@ public class AccountServiceImpl implements AccountService {
                 .currency(bankAccountRequestDTO.getCurrency())
                 .build();
         BankAccount save = bankAccountReposetory.save(bankAccount);
-//        BankAccountResponseDTO bankAccountResponseDTO = BankAccountResponseDTO.builder()
-//                .id(save.getId())
-//                .type(save.getType())
-//                .createdAt(save.getCreatedAt())
-//                .currency(save.getCurrency())
-//                .balance(save.getBalance())
-//                .build();
         BankAccountResponseDTO bankAccountResponseDTO = accountMapper.fromBankAccount(save);
         return bankAccountResponseDTO;
     }
